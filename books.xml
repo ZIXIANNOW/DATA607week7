@@ -1,0 +1,21 @@
+<Record>
+	<books>
+		<Title>How the Steel Was Tempered</Title>
+          	<Author>Nikolai Ostrovsky</Author>
+          	<Year>1936</Year>
+            <Language>Russian</Language>
+  </books>
+	<books>
+		<Title>One Thousand and One Nights</Title>
+          	<Author>Maxfield Parrish</Author>
+         	  <Year>1909</Year>
+            <Language>Arabic</Language>
+  </books>
+ 	<books>
+		<Title>The Deep</Title>
+          	<Author>Daveed Diggs, William Hutson, Jonathan Snipes</Author>
+          	<Year>2019</Year>
+            <Language>English</Language>
+	</books>
+    
+</Record>
