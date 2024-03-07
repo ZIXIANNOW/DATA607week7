@@ -1,0 +1,82 @@
+---
+title: "Assignment – Working with XML and JSON in R"
+author: "ZIXIAN LIANG"
+date: "2024-03-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+```{r include=FALSE}
+library(XML)
+library(RCurl)
+library(jsonlite)
+library(DT)
+```
+
+
+## Introduction
+
+The objective of this task is to choose three favorite books and separately create three files in different formats. 
+Personally, I enjoy reading books from different countries.
+
+
+
+### HTML
+
+```{r}
+htmlurl <- getURLContent("https://raw.githubusercontent.com/ZIXIANNOW/DATA607week7/main/books.html")
+htmldata <-readHTMLTable(htmlurl)
+htmldata <-htmldata[[1]]
+datatable(htmldata)
+```
+
+
+### XML
+
+```{r}
+xmlurl <- getURL("https://raw.githubusercontent.com/ZIXIANNOW/DATA607week7/main/books.xml")
+xmldata <- xmlParse(xmlurl)
+xmldata = xmlToDataFrame(xmldata)
+datatable(xmldata)
+```
+
+
+### JSON
+
+```{r}
+jsonurl <- fromJSON("https://raw.githubusercontent.com/ZIXIANNOW/DATA607week7/main/books.json")
+jsondata <- jsonurl[[1]]
+jsondata <- as.data.frame(jsondata)
+datatable(jsondata)
+```
+
+
+
+
+### Comparison
+
+```{r}
+str(htmldata)
+```
+
+
+```{r}
+str(xmldata)
+```
+
+
+```{r}
+str(jsondata)
+```
+
+
+## Conclusion
+
+In summary, all the three data frames are identical even though information extracted from different file formats.
+
